@@ -26,3 +26,22 @@ void print_triangle(int leftCol, int size)
   }
 }
 
+// Prints an arrow that is triangle and a center rectangle
+void print_arrow(int leftCol, int size){
+  int width = 3;
+  int height = size;
+  int center = leftCol + size; // Triangle's center
+  int recleftCol = center - (width/2); 
+  print_triangle(leftCol, size); // Head
+  print_rectangle(recleftCol, width, height); // Body
+}
+
+// Prints a rectangle
+void print_rectangle(int recleftCol, int  width, int height){
+  for (int row = 0; row < height; row++){
+    int col;
+    for (col = 0; col < recleftCol; col++) putchar(' ');
+    for (       ; col < recleftCol + width; col++) putchar('*');
+    putchar('\n');
+  }
+}
